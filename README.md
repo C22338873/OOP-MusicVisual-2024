@@ -20,6 +20,7 @@ Student Number: C22506249
 ## NOTES
 
 - Remember to create your own branch to work on the project to prevent interference with others or the master branch
+https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
 - To add the repo files onto your system : go to bash/terminal and type in 
 ```
 git clone https://github.com/C22338873/OOP-MusicVisual-2024
