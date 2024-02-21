@@ -12,12 +12,38 @@ Name: Nikita
 
 Student Number:
 
-Name: Liutaurus
+Name: Liutauras
 
 Student Number:
 
 
 ## NOTES
+- To add the repo files onto your system : go to bash/terminal and type in 
+```
+git clone https://github.com/C22338873/OOP-MusicVisual-2024
+```
+- To commit and push updated file 
+```
+git add .
+git commit -m "updated something"
+git push
+```
+- To run example code : go to Main.java and replace 'RotatingAudioBands' in the line below with the file you wish to run
+```
+processing.core.PApplet.runSketch(a, new RotatingAudioBands());
+``` 
+- Then in vsc terminal type (for Mac)
+```
+cd java
+source mcompile.sh
+source mrun.sh
+```
+- compile and run on windows
+```
+cd java
+source compile.sh
+source run.sh
+```
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
