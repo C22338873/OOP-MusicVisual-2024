@@ -1,7 +1,7 @@
 
 package ie.tudublin.C22338873;
 
-public class Waveform3D extends PApplet {
+public class RachealVisual extends PApplet {
     int cols, rows;
     int scale = 20;
     float[][] terrain;
