@@ -4,6 +4,7 @@ Name: Racheal Chen
 
 Student Number: C22338873
 
+<<<<<<< HEAD
 Name: Zannath
 
 Student Number: 
@@ -18,6 +19,25 @@ Student Number:
 
 
 ## NOTES
+=======
+Name: Zannath Min Dilruba Tasneem
+
+Student Number: C21371071
+
+Name: Nikita Verbitskiy
+
+Student Number: D20123962
+
+Name: Liutauras Bruozis
+
+Student Number: C22506249
+
+
+## NOTES
+
+- Remember to create your own branch to work on the project to prevent interference with others or the master branch
+https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
+>>>>>>> 7556433eaf5818b08c4d0bbc1c6dab6fc9c78a57
 - To add the repo files onto your system : go to bash/terminal and type in 
 ```
 git clone https://github.com/C22338873/OOP-MusicVisual-2024
@@ -44,7 +64,10 @@ cd java
 source compile.sh
 source run.sh
 ```
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 7556433eaf5818b08c4d0bbc1c6dab6fc9c78a57
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
