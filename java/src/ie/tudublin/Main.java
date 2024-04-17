@@ -2,14 +2,14 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 import example.AudioBandsVisual; // Add the missing import statement
-import ie.tudublin.C22338873.Audio1;
+import ie.tudublin.C22338873.RachealVisual;
 
 
 public class Main {
 
     public void startUI() {
         String[] a = { "MAIN" };
-        PApplet.runSketch(a, new Audio1());
+        PApplet.runSketch(a, new RachealVisual());
     }
 
     public static void main(String[] args) {
