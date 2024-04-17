@@ -1,15 +1,15 @@
 package ie.tudublin;
 
-import example.CubeVisual;
-import example.MyVisual;
-import example.RotatingAudioBands;
+import processing.core.PApplet;
+import example.AudioBandsVisual; // Add the missing import statement
+import ie.tudublin.C22338873.Audio1;
 
 
 public class Main {
 
     public void startUI() {
         String[] a = { "MAIN" };
-        processing.core.PApplet.runSketch(a, new RotatingAudioBands());
+        PApplet.runSketch(a, new Audio1());
     }
 
     public static void main(String[] args) {
@@ -17,3 +17,4 @@ public class Main {
         main.startUI();
     }
 }
+

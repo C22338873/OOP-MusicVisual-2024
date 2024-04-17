@@ -1,5 +1,6 @@
-
 package ie.tudublin.C22338873;
+
+
 
 public class RachealVisual extends PApplet {
     int cols, rows;
