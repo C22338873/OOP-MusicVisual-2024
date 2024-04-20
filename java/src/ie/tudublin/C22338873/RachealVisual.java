@@ -1,106 +1,131 @@
 package ie.tudublin.C22338873;
 
-import ddf.minim.AudioBuffer;
-import ddf.minim.AudioInput;
-import ddf.minim.AudioPlayer;
-import ddf.minim.Minim;
 import processing.core.PApplet;
+import ddf.minim.*;
+import ddf.minim.analysis.*;
 
-public class RachealVisual extends PApplet
-{
+public class RachealVisual extends PApplet {
     Minim minim;
-    AudioPlayer ap;
-    AudioInput ai;
-    AudioBuffer ab;
+    AudioPlayer song;
+    FFT fft;
 
-    int mode = 0;
+    float specLow = 0.03f; // 3%
+    float specMid = 0.125f; // 12.5%
+    float specHi = 0.20f; // 20%
+    float scoreLow = 0;
+    float scoreMid = 0;
+    float scoreHi = 0;
+    float oldScoreLow = scoreLow;
+    float oldScoreMid = scoreMid;
+    float oldScoreHi = scoreHi;
+    float scoreDecreaseRate = 25;
+    int nbCircles;
+    Circle[] circles;
 
-    float[] lerpedBuffer;
-    float y = 0;
-    float smoothedY = 0;
-    float smoothedAmplitude = 0;
+    public void settings() {
+        size(800, 800, P3D);
+    }
 
-    public void keyPressed() {
-        if (key >= '0' && key <= '9') {
-            mode = key - '0';
+    public void setup() {
+        minim = new Minim(this);
+        song = minim.loadFile("data/Joji_-_SLOW_DANCING_IN_THE_DARK.mp3");
+        fft = new FFT(song.bufferSize(), song.sampleRate());
+        nbCircles = (int) (fft.specSize() * specHi);
+        circles = new Circle[nbCircles];
+
+        for (int i = 0; i < nbCircles; i++) {
+            circles[i] = new Circle();
         }
-        if (keyCode == ' ') {
-            if (ap.isPlaying()) {
-                ap.pause();
-            } else {
-                ap.rewind();
-                ap.play();
+
+        background(0);
+        song.play(0);
+    }
+
+    public void draw() {
+        fft.forward(song.mix);
+        oldScoreLow = scoreLow;
+        oldScoreMid = scoreMid;
+        oldScoreHi = scoreHi;
+        scoreLow = 0;
+        scoreMid = 0;
+        scoreHi = 0;
+
+        for (int i = 0; i < fft.specSize() * specLow; i++) {
+            scoreLow += fft.getBand(i);
+        }
+
+        for (int i = (int) (fft.specSize() * specLow); i < fft.specSize() * specMid; i++) {
+            scoreMid += fft.getBand(i);
+        }
+
+        for (int i = (int) (fft.specSize() * specMid); i < fft.specSize() * specHi; i++) {
+            scoreHi += fft.getBand(i);
+        }
+
+        if (oldScoreLow > scoreLow) {
+            scoreLow = oldScoreLow - scoreDecreaseRate;
+        }
+
+        if (oldScoreMid > scoreMid) {
+            scoreMid = oldScoreMid - scoreDecreaseRate;
+        }
+
+        if (oldScoreHi > scoreHi) {
+            scoreHi = oldScoreHi - scoreDecreaseRate;
+        }
+
+        float scoreGlobal = 0.66f * scoreLow + 0.8f * scoreMid + 1f * scoreHi;
+        background(scoreLow / 100, scoreMid / 100, scoreHi / 100);
+
+        for (int i = 0; i < nbCircles; i++) {
+            float bandValue = fft.getBand(i);
+            circles[i].display(scoreLow, scoreMid, scoreHi, bandValue, scoreGlobal);
+        }
+    }
+
+    class Circle {
+        float startingZ = -10000;
+        float maxZ = 1000;
+        float x, y, z;
+        float sumRotX, sumRotY, sumRotZ;
+
+        Circle() {
+            x = random(width);
+            y = random(height);
+            z = random(startingZ, maxZ);
+        }
+
+        void display(float scoreLow, float scoreMid, float scoreHi, float intensity, float scoreGlobal) {
+            int displayColor = color(scoreLow * 0.67f, scoreMid * 0.67f, scoreHi * 0.67f, intensity * 5);
+            fill(displayColor, 255);
+            int strokeColor = color(255, 150 - (20 * intensity)); // Declare the strokeColor variable
+            stroke(strokeColor);
+            strokeWeight(1 + (scoreGlobal / 300));
+            pushMatrix();
+            translate(x, y, z);
+            sumRotX += intensity * (random(0.01f, 0.1f) / 1000);
+            sumRotY += intensity * (random(0.01f, 0.1f) / 1000);
+            sumRotZ += intensity * (random(0.01f, 0.1f) / 1000);
+            rotateX(sumRotX);
+            rotateY(sumRotY);
+            rotateZ(sumRotZ);
+            ellipse(0, 0, 100 + (intensity / 2), 100 + (intensity / 2));
+            popMatrix();
+            z += (1 + (intensity / 5) + (pow((scoreGlobal / 150), 2)));
+            if (z >= maxZ) {
+                x = random(width);
+                y = random(height);
+                z = startingZ;
             }
         }
     }
 
-    public void settings()
-    {
-        size(800, 800, P3D);
-
-    }
-
-    public void setup()
-    {
-        minim = new Minim(this);
-        // Uncomment this to use the microphone
-        // ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
-        // ab = ai.mix; 
-        ap = minim.loadFile("data/Joji_-_SLOW_DANCING_IN_THE_DARK.mp3", 1024);
-        ap.play();
-        ab = ap.mix;
-        colorMode(HSB);
-
-        y = height / 2;
-        smoothedY = y;
-
-        lerpedBuffer = new float[ab.size()];
-    }
-
-    float off = 0;
-
-    public void draw() {
-        background(0);
-        stroke(255);
-    
-        // Calculate the average amplitude
-        float total = 0;
-        for (int i = 0; i < ab.size(); i++) {
-            total += abs(ab.get(i));
-        }
-        float average = total / ab.size();
-    
-        // Use the average amplitude to determine the number of circles
-        int numberOfCircles = (int) map(average, 0, 1, 10, 100);
-    
-        // Draw the waves
-        drawWaves(width / 2, height / 2, numberOfCircles);
-    }
-    
-    // Method to draw the waves in 3D
-    private void drawWaves(float centerX, float centerY, int numberOfCircles) {
-        float maxDiameter = min(width, height) * 0.8f;
-        float angleOffset = 0;
-        for (int i = 0; i < numberOfCircles; i++) {
-            float diameter = map(i, numberOfCircles, 0, 0, maxDiameter); // Map the circle index from numberOfCircles to 0
-            stroke(map(i, 0, numberOfCircles, 0, 255), 255, 255);
-            strokeWeight(map(i, 0, numberOfCircles, 1, 5));
-            noFill(); // Make the inside of the circles transparent
-            pushMatrix();
-            // Adjust the y-coordinate based on a sine wave that changes over time
-            float y = centerY + sin(angleOffset + frameCount * 0.01f) * 200; // Increase the multiplier to 200
-            translate(centerX, y, map(i, 0, numberOfCircles, -100, 100)); // Decrease the range of the z-coordinate to -100 to 100
-            rotateX(radians(85)); // Rotate the view by 85 degrees
-            ellipse(0, 0, diameter, diameter);
-            popMatrix();
-            angleOffset += 0.1; // Adjust this to get different wave effects
-        }
-    }
 }
 
 
 
-    
+
+
 
 
 
