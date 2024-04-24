@@ -58,8 +58,5 @@ public class LiutaurasVisual extends PApplet {
         n6 += 0.04;
     }
 
-    public static void main(String[] args) {
-        PApplet.main("ie.tudublin.C22506249.LiutaurasVisual");
-    }
 }
 

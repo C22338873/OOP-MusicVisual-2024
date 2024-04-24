@@ -89,11 +89,4 @@ public class ZansVisual extends PApplet {
             }
         }
     }
-    
-
-    public static void main(String[] args) {
-        String[] processingArgs = {"ZansVisual"};
-        ZansVisual zansVisual = new ZansVisual();
-        PApplet.runSketch(processingArgs, zansVisual);
-    }
 }
