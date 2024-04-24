@@ -3,6 +3,7 @@ package ie.tudublin;
 import processing.core.PApplet;
 import example.AudioBandsVisual; // Add the missing import statement
 import ie.tudublin.C22338873.RachealVisual;
+import ie.tudublin.C21371071.ZansVisual;
 
 
 public class Main {
