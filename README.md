@@ -1,86 +1,35 @@
 # Music Visualiser Project
+## Team Members:
 
 Name: Racheal Chen
-
 Student Number: C22338873
-
-<<<<<<< HEAD
-Name: Zannath
-
-Student Number: 
-
-Name: Nikita
-
-Student Number:
-
-Name: Liutaurus
-
-Student Number:
-
-
-## NOTES
-=======
+-------------------------------------
 Name: Zannath Min Dilruba Tasneem
-
 Student Number: C21371071
-
+-------------------------------------
 Name: Nikita Verbitskiy
-
 Student Number: D20123962
-
+-------------------------------------
 Name: Liutauras Bruozis
-
 Student Number: C22506249
-
-
-## NOTES
-
-- Remember to create your own branch to work on the project to prevent interference with others or the master branch
-https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
->>>>>>> 7556433eaf5818b08c4d0bbc1c6dab6fc9c78a57
-- To add the repo files onto your system : go to bash/terminal and type in 
-```
-git clone https://github.com/C22338873/OOP-MusicVisual-2024
-```
-- To commit and push updated file 
-```
-git add .
-git commit -m "updated something"
-git push
-```
-- To run example code : go to Main.java and replace 'RotatingAudioBands' in the line below with the file you wish to run
-```
-processing.core.PApplet.runSketch(a, new RotatingAudioBands());
-``` 
-- Then in vsc terminal type (for Mac)
-```
-cd java
-source mcompile.sh
-source mrun.sh
-```
-- compile and run on windows
-```
-cd java
-source compile.sh
-source run.sh
-```
-<<<<<<< HEAD
 	
 =======
->>>>>>> 7556433eaf5818b08c4d0bbc1c6dab6fc9c78a57
-
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
 
 # Description of the assignment
+In our project we decided on the song "Slow Dancing In The Dark" by Joji. The song is poignant and introspective. It explores themes of love, heartbreak, and vulnerability. The song is characterized by its haunting melody and emotional lyrics, which resonate with listeners on a deep level.
+In this assignment we have been tasked to create audio visualisers for our chosen song. We aim to create visuals that are immersive and create a captivating experience that resonates with our audience on both a visual and emotional level. we attempt to convey the melancholic beauty and introspective mood, by synchronizing the visuals with the song's rhythm and dynamics.
 
 # Instructions
+We set up 4 separate packages for each of our audio visual java files. 
+We are to import them into a main audio java file ( utilising switch cases) and then run the audio java file in a main.java.
+We downloaded a mp3 format of our chosen song into the data folder where our visual files will retrieve the song.
 
-# How it works
+
+# How it works 
+### Zannath - Visual Name
+### Liutauras - Visual Name
+### Nikita - Visual Name
+### Racheal Chen - Visual Name
 
 # What I am most proud of in the assignment
 
@@ -151,4 +100,36 @@ This is a table:
 |Some stuff | Some more stuff in this column |
 |Some stuff | Some more stuff in this column |
 |Some stuff | Some more stuff in this column |
+
+## NOTES
+
+- Remember to create your own branch to work on the project to prevent interference with others or the master branch
+https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
+>>>>>>> 7556433eaf5818b08c4d0bbc1c6dab6fc9c78a57
+- To add the repo files onto your system : go to bash/terminal and type in 
+```
+git clone https://github.com/C22338873/OOP-MusicVisual-2024
+```
+- To commit and push updated file 
+```
+git add .
+git commit -m "updated something"
+git push
+```
+- To run example code : go to Main.java and replace 'RotatingAudioBands' in the line below with the file you wish to run
+```
+processing.core.PApplet.runSketch(a, new RotatingAudioBands());
+``` 
+- Then in vsc terminal type (for Mac)
+```
+cd java
+source mcompile.sh
+source mrun.sh
+```
+- compile and run on windows
+```
+cd java
+source compile.sh
+source run.sh
+```
 
