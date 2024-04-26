@@ -13,7 +13,7 @@ public class ZansVisual extends PApplet {
     Node[] nodes = new Node[1200];
 
     public void settings() {
-        size(800, 800);
+        fullScreen(P3D);;
     }
 
     public void setup() {
@@ -89,4 +89,5 @@ public class ZansVisual extends PApplet {
             }
         }
     }
+
 }

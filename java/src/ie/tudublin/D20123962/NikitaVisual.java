@@ -15,7 +15,7 @@ public class NikitaVisual extends PApplet {
     ArrayList<MatrixCode> matrixCodes; // List for Matrix code elements
 
     public void settings() {
-        size(800, 800);
+        fullScreen(P3D);
     }
 
     public void setup() {
@@ -29,17 +29,6 @@ public class NikitaVisual extends PApplet {
         matrixCodes = new ArrayList<MatrixCode>();
         for (int i = 0; i < width / 20; i++) {
             matrixCodes.add(new MatrixCode(i * 20));
-        }
-    }
-
-    public void keyPressed() {
-        if (keyCode == ' ') {
-            if (ap.isPlaying()) {
-                ap.pause();
-            } else {
-                ap.rewind();
-                ap.play();
-            }
         }
     }
 
@@ -106,3 +95,4 @@ public class NikitaVisual extends PApplet {
         }
     }
 }
+

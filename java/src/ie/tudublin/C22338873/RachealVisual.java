@@ -23,7 +23,7 @@ public class RachealVisual extends PApplet {
     Circle[] circles;
 
     public void settings() {
-        size(800, 800, P3D);
+        fullScreen(P3D);
     }
 
     public void setup() {
