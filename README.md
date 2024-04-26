@@ -3,13 +3,13 @@
 
 Name: Racheal Chen
 Student Number: C22338873
--------------------------------------
+
 Name: Zannath Min Dilruba Tasneem
 Student Number: C21371071
--------------------------------------
+
 Name: Nikita Verbitskiy
 Student Number: D20123962
--------------------------------------
+
 Name: Liutauras Bruozis
 Student Number: C22506249
 	
