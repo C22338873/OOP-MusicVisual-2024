@@ -183,80 +183,21 @@ In this assignment, I'm really proud of how I could express my creative vision t
 
 Overall, I'm proud of how I combined creativity, technical skill, and the ability to search and utilize online resources effectively to create a compelling and immersive visualization of music. This assignment truly showcases my passion for both art and technology. This project was definitely rewarding in the end to be able to see and showcase our work.
 
-# Markdown Tutorial
+=======
 
-This is *emphasis*
+### Youtube Video 
 
-This is a bulleted list
+[![YouTube](https://img.youtube.com/vi/elcjsvxjdNU/sddefault.jpg)](https://youtu.be/elcjsvxjdNU?si=ZoUzmWbLGURCHdhf)
+Video made by Liutauras Bruozis
 
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://youtu.be/elcjsvxjdNU?si=ZoUzmWbLGURCHdhf)
-<iframe width="899" height="584" src="https://www.youtube.com/embed/elcjsvxjdNU" title="OOP MUSICVISUAL2024 Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
 ## NOTES
 
+**These are just some commands and resources for the team to get started on the Assignment**
+
 - Remember to create your own branch to work on the project to prevent interference with others or the master branch
 https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
->>>>>>> 7556433eaf5818b08c4d0bbc1c6dab6fc9c78a57
+
 - To add the repo files onto your system : go to bash/terminal and type in 
 ```
 git clone https://github.com/C22338873/OOP-MusicVisual-2024
