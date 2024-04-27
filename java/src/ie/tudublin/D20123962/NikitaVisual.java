@@ -15,7 +15,7 @@ public class NikitaVisual extends PApplet {
     ArrayList<MatrixCode> matrixCodes; // List for Matrix code elements
 
     public void settings() {
-        fullScreen(P3D);
+        size(800, 800, P3D);
     }
 
     public void setup() {

@@ -31,6 +31,9 @@ We downloaded a mp3 format of our chosen song into the data folder where our vis
 
 # How it works 
 ### Zannath 
+
+![alt text](images/Links.png)
+
 ### Liutauras Bruozis' Visual
 For my audio visual processing sketch i utilized the minim audio library so that my visuals react to the music. The song that we chose for this project was “SLOW DANCING IN THE DARK” by Joji. As the music plays the draw() function essentially creates visuals that respond to the sound buffers data. 
 
@@ -55,6 +58,8 @@ It then draws ellipses and rectangles at these positions, with the size of these
 Colours are set to white and a semi-transparent blue and orange for different shapes. 
 
 The iterative variables n4 and n6 are incremented slightly with each frame, creating evolving movement over time, which also speeds up and down depending on the frequency of the audio. 
+
+![alt text](images/Firework.png)
 
 ### Nikita Verbitskiy's Visual
 Global Variables
@@ -104,9 +109,11 @@ update(): Moves the column down the screen and resets it when it goes beyond the
 
 display(): Displays the characters at their current position with varying levels of transparency (alpha) to create a fading effect.
 
-The visualization combines an audio-reactive waveform with a Matrix-like "digital rain" effect. The waveform is drawn according to the audio data, and the Matrix code effect is achieved through the MatrixCode class. Each instance of MatrixCode simulates a stream of random characters falling at a random speed, simulating the well-known effect from the Matrix films. The visual and auditory elements together create a dynamic multimedia experience.  
+The visualization combines an audio-reactive waveform with a Matrix-like "digital rain" effect. The waveform is drawn according to the audio data, and the Matrix code effect is achieved through the MatrixCode class. Each instance of MatrixCode simulates a stream of random characters falling at a random speed, simulating the well-known effect from the Matrix films. The visual and auditory elements together create a dynamic multimedia experience.
 
 Creating a project that integrates audio with visual elements, especially in a way that mimics the iconic "digital rain" from the Matrix, is no small feat. It requires not only programming skills but also a creative vision to bring it all together.
+
+![alt text](images/Waveform.png)
 
 ### Racheal Chen's Visual
 My Processing sketch creates a 3D visual representation of the music using circles that move and change size according to the audio input:
@@ -123,7 +130,7 @@ Also noting that by utilising the lerpedBuffer(), I created a seamless transitio
 **Overall Visualization:**
 Combining these elements together creates a mesmerizing 3D visual representation of the music. As the audio plays, the circles dynamically move, change size, and shift in color, synchronized with the rhythm and intensity of the music. This immersive experience engages the viewer's senses, allowing them to both see and feel the music in a unique way. The dynamic interplay between sound and visuals enhances the emotional impact of the music, turning the listening experience into a captivating visual journey.
 
-
+![alt text](images/Circles.png)
 
 
 
@@ -188,6 +195,7 @@ Overall, I'm proud of how I combined creativity, technical skill, and the abilit
 ### Youtube Video 
 
 [![YouTube](https://img.youtube.com/vi/elcjsvxjdNU/sddefault.jpg)](https://youtu.be/elcjsvxjdNU?si=ZoUzmWbLGURCHdhf)
+
 Video made by Liutauras Bruozis
 
 

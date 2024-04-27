@@ -11,7 +11,7 @@ public class Main {
 
     public void startUI() {
         String[] a = { "MAIN" };
-        PApplet.runSketch(a, new NikitaVisual());
+        PApplet.runSketch(a, new ZansVisual());
 
     }
 
