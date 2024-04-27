@@ -30,12 +30,115 @@ We downloaded a mp3 format of our chosen song into the data folder where our vis
 
 
 # How it works 
-### Zannath - Visual Name
-### Liutauras - Visual Name
-### Nikita - Visual Name
-### Racheal Chen - Visual Name
+### Zannath 
+### Liutauras Bruozis' Visual
+For my audio visual processing sketch i utilized the minim audio library so that my visuals react to the music. The song that we chose for this project was “SLOW DANCING IN THE DARK” by Joji. As the music plays the draw() function essentially creates visuals that respond to the sound buffers data. 
+
+ 
+
+Here is how the visuals work in the code: 
+
+The sketch is designed to run in full-screen mode, using a 3D rendering engine (P3D). 
+
+It sets up an audio player and loads the specified song. 
+
+In the draw() loop, a semi-transparent rectangle is drawn across the screen each frame to create a fading trail effect. 
+
+It then translates the origin to the center of the screen so that the visuals are in the middle. 
+
+For each sample in the sound buffer, it calculates two angles based on sine functions that incorporate iterative variables n4 and n6 which create movement that increases over time. 
+
+Using these angles, it calculates positions (x and y) on a circular path and positions (x3 and y3) on a larger, more variable circular path. 
+
+It then draws ellipses and rectangles at these positions, with the size of these shapes being effected by the audio buffer's left and right channels. 
+
+Colours are set to white and a semi-transparent blue and orange for different shapes. 
+
+The iterative variables n4 and n6 are incremented slightly with each frame, creating evolving movement over time, which also speeds up and down depending on the frequency of the audio. 
+
+### Nikita Verbitskiy's Visual
+Global Variables
+Minim minim; - An instance of the Minim class, which handles audio operations.
+AudioPlayer ap; - Used for playing audio.
+AudioBuffer ab; - Represents the audio buffer to access the sound data.
+float[] lerpedBuffer; - An array to store "smoothed" (interpolated) audio data.
+ArrayList<MatrixCode> matrixCodes; - An ArrayList to store instances of the MatrixCode class, which will simulate the "falling code" effect from the Matrix movie.
+Setup Method (setup())
+Initializes the Minim object, loads an audio file, and starts playing it.
+Initializes the audio buffer to the mixed stereo output of the audio player.
+Sets the color mode to HSB (Hue, Saturation, Brightness).
+Initializes the lerpedBuffer array and creates multiple MatrixCode objects, each representing a column of falling characters.
+Settings Method (settings())
+Sets the size of the window where the visualization will be displayed.
+Draw Method (draw())
+Called repeatedly, creating an animation effect.
+Clears the screen.
+Updates and displays the MatrixCode objects.
+Translates the drawing context to the center of the window.
+Draws two mirrored waveforms based on the audio data, where the color of the lines is mapped to their position, creating a rainbow effect.
+KeyPressed Method (keyPressed())
+Toggles the audio playback when the spacebar is pressed.
+MatrixCode Class
+An inner class that represents each column of the falling characters effect.
+Contains an ArrayList of Characters, coordinates (x and y), speed, and length.
+Methods in MatrixCode
+update(): Moves the column down the screen and resets it when it goes beyond the bottom edge, generating a new random set of characters.
+display(): Displays the characters at their current position with varying levels of transparency (alpha) to create a fading effect.
+The visualization combines an audio-reactive waveform with a Matrix-like "digital rain" effect. The waveform is drawn according to the audio data, and the Matrix code effect is achieved through the MatrixCode class. Each instance of MatrixCode simulates a stream of random characters falling at a random speed, simulating the well-known effect from the Matrix films. The visual and auditory elements together create a dynamic multimedia experience.  
+Creating a project that integrates audio with visual elements, especially in a way that mimics the iconic "digital rain" from the Matrix, is no small feat. It requires not only programming skills but also a creative vision to bring it all together.
+
+### Racheal Chen's Visual
+My Processing sketch creates a 3D visual representation of the music using circles that move and change size according to the audio input:
+
+**Dynamic Circle Generation:** Circles are randomly generated around the center origin in the range of 20px of eachother. An array of circles is looped to dynamically generate the circles around the center. These circles are the main elements of the visual.
+
+**Colours:** The changing colours of the circles are based on the low and high sounds of the audio. By using FFT, it can determine the low, mid and high sounds so the colours red, green and blue (respectivly) can be displayed. When all sounds are present, the circles turn white.
+Also noting that by utilising the lerpedBuffer(), I created a seamless transition between the colours as the level of the sounds change.
+
+**Circle Movement Speed:** The speed in which the circles move along the Z axis is determined by the volume of the music, the louder the music, the quicker the circles travel. The circles move and speed up dynamically due to the z position of the circles being constantly updated ( incremently increasing ) based on the 'intensity' of the audio. I believe this works excellent with the music, to evoke various strong emotions.
+
+**Circle Sizing:** The size of the circles dynamically change as it travels. The size changes due to the amplitude of the audio. This creates an effect similar to a speaker's diaphram when it vibrates due to a deep bass sound.
+
+**Overall Visualization:**
+Combining these elements together creates a mesmerizing 3D visual representation of the music. As the audio plays, the circles dynamically move, change size, and shift in color, synchronized with the rhythm and intensity of the music. This immersive experience engages the viewer's senses, allowing them to both see and feel the music in a unique way. The dynamic interplay between sound and visuals enhances the emotional impact of the music, turning the listening experience into a captivating visual journey.
+
+
+
+
 
 # What I am most proud of in the assignment
+### Nikita:
+My project showcases several competencies:
+
+Audio Processing: Implementing audio playback and analysis using the Minim library.
+Visual Representation: Translating audio data into a visual waveform and creating a separate visual effect inspired by a cultural reference.
+Programming Logic: Using loops, conditionals, and class structures effectively.
+Creative Coding: Applying code to an artistic endeavor, which is a unique challenge that combines technical skill with aesthetic sense.
+Successful Audio Integration: Implementing the Minim library to handle audio, and not just playing back a track but accessing its waveform data, is a technical achievement.
+Learning and Applying a New Library: Understanding and utilizing a new library like Minim can be challenging. Getting to grips with its features and functions is something to be proud of.
+Creating the Matrix Effect: The Matrix "digital rain" is iconic and recreating that visually through code demonstrates not only my programming skills but also my problem-solving abilities.
+Algorithm Development for Visual Effects: Designing the algorithms that control the falling characters' speed, randomness, and resetting mechanism requires careful thought and experimentation.
+Synchronizing Audio with Visuals: I’ve managed to create a visual representation of the audio data by mapping the audio buffer to a waveform display. The fact that i mirrored the waveform to create a symmetrical visual effect shows an attention to detail and an artistic touch.
+Handling User Interaction: Implementing functionality for user interaction, like pausing and playing the track with a keypress, makes mine application interactive and user-friendly.
+Code Organization and Structure: Writing clean, organized code with a well-thought-out class structure for the MatrixCode shows my ability to architect software that is maintainable and scalable.
+Overcoming Challenges: Any bugs or challenges i faced and overcame during the development are moments of learning and growth.
+Creative Expression: Bringing together audio and visual elements in a way that expresses a creative idea is fulfilling on both a technical and artistic level.
+
+### Zannath:
+### Liutauras:
+The fact that I used audio data to drive visual changes in my project making it respond to the frequency of the audio and tempo creates a very aesthetic visual. 
+
+The blending of colours and shapes through the use of transparency adds a layer of complexity to the visuals. 
+
+Incrementing angles over time for a dynamic and evolving visual patterns. From this project I have broadened my knowledge and understanding of motion and change within visual systems. 
+
+The fact that I've set up an environment that responds in real-time to music is an achievement in itself, tying visual aesthetics to audio input is a significant accomplishment. 
+
+ 
+
+Overall I am very happy with how my visual looks aesthetically and how it responds to the audio. When designing my visual I wanted to go for something that would look like fireworks as i believe that it would make a very nice and creative visual. When it comes to how it ties in with the song, the artist talks about getting over someone and letting them go. I personally think that great, beautiful moments happen just as fast as they disappear, like fireworks which shine so bright and fade away into the darkness just as fast, reminding us that nothing lasts forever not even darkness. I’m happy that I did the audio visual as my project as it helped me become better and more accustomed to using  java and experimenting with audio. This was a great experience which helped me develop as a programmer.
+### Racheal:
+
 
 # Markdown Tutorial
 
