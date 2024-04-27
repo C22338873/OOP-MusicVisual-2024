@@ -25,12 +25,31 @@ In this assignment we have been tasked to create audio visualisers for our chose
 
 # Instructions
 We set up 4 separate packages for each of our audio visual java files. 
+
 We are to import them into a main audio java file ( utilising switch cases) and then run the audio java file in a main.java.
+
 We downloaded a mp3 format of our chosen song into the data folder where our visual files will retrieve the song.
+
+Next, within each audio visual Java file, we used Processing Library to create dynamic visualizations that respond to the music's tempo, beats, and mood. 
+
+Each package will contain methods for generating different types of visual effects, such as waveform visualizations, frequency spectrum analyses, or animated graphics that pulse and morph in sync with the music.
 
 
 # How it works 
 ### Zannath 
+This visualiser creates an abstract, dynamic display where nodes move around the screen, and lines are drawn between them based on the audio frequency spectrum.
+
+The thickness of the lines varies with the intensity of the music, creating a visually dynamic representation of the audio. 
+
+The visualiser is directly influenced by the audio being played. The frequency of the audio is used to determine the thickness of the lines drawn between nodes. 
+
+The position of the nodes and the colour gradient are not directly controlled by the audio but are static visual elements. 
+
+However, the overall movement and dynamics of the visualizer are affected by the audio, as the nodes move and bounce around the screen in response to the music. 
+
+The design I've made represents the singers mind throughout the song. 
+
+The colour gradients show his sadness and regret, and the nodes moving in a pattern are like his mind pondering and asking the questions in the lyric as well as representing a ''slow dance'' like the title suggests.
 
 ![alt text](images/Links.png)
 
@@ -163,6 +182,12 @@ My project showcases several competencies:
 **Creative Expression:** Bringing together audio and visual elements in a way that expresses a creative idea is fulfilling on both a technical and artistic level.
 
 ### Zannath:
+Throughout this project, I'm proud of the teamwork and skill that was displayed. 
+
+My group members were great people to work on this with because they all showed a lot of interest in the project. 
+So we naturally worked really well together and managed to create awesome visuals in the end. Although there were a lot of challenges in this project, we were able to figure them out. 
+
+I've faced a lot of issues and bugs at first but I've learned a lot through this project on how to set things up and code really cool visuals. My skills have gotten better than before and I'm proud of learning this new skill.
 
 ### Liutauras:
 The fact that I used audio data to drive visual changes in my project making it respond to the frequency of the audio and tempo creates a very aesthetic visual. 
